@@ -1,58 +1,93 @@
-import { Phone, MessageCircle, MapPin, Mail } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Mail, ArrowUp } from "lucide-react";
 
 const quickLinks = [
-  "Airport Cabs", "Outstation Cabs", "Sightseeing Cabs",
-  "Srisailam Tour Packages", "About Us", "Contact",
+  { label: "Airport Cabs", href: "#services" },
+  { label: "Outstation Cabs", href: "#services" },
+  { label: "Sightseeing Cabs", href: "#services" },
+  { label: "Srisailam Packages", href: "#packages" },
+  { label: "About Us", href: "#about" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const routesCol1 = [
-  "Hyderabad To Vijayawada", "Hyderabad To Guntur", "Hyderabad To Nellore",
-  "Hyderabad To Tirupati", "Hyderabad To Vizag", "Hyderabad To Rajahmundry",
-  "Hyderabad To Ongole", "Hyderabad To Warangal",
+  "Hyderabad To Vijayawada", "Hyderabad To Tirupati", "Hyderabad To Vizag",
+  "Hyderabad To Srisailam", "Hyderabad To Warangal", "Hyderabad To Guntur",
+  "Hyderabad To Nellore", "Hyderabad To Ongole",
 ];
 
 const routesCol2 = [
-  "Hyderabad To Shirdi", "Hyderabad To Bangalore", "Hyderabad To Chennai",
-  "Hyderabad To Goa", "Hyderabad To Pune", "Hyderabad To Mumbai",
-  "Hyderabad To Nagpur", "Hyderabad To Srisailam",
+  "Hyderabad To Shirdi", "Hyderabad To Goa", "Hyderabad To Bangalore",
+  "Hyderabad To Chennai", "Hyderabad To Pune", "Hyderabad To Mumbai",
+  "Hyderabad To Nagpur", "Hyderabad To Rajahmundry",
 ];
 
 const Footer = () => (
   <footer className="bg-footer text-footer-foreground">
     <div className="max-w-7xl mx-auto section-padding pb-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      {/* CTA banner */}
+      <div className="relative bg-primary rounded-3xl p-8 md:p-12 mb-16 overflow-hidden">
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: "radial-gradient(circle at 0% 100%, hsl(var(--accent)) 0%, transparent 50%), radial-gradient(circle at 100% 0%, hsl(var(--secondary)) 0%, transparent 50%)"
+        }} />
+        <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 className="font-heading text-2xl md:text-3xl text-primary-foreground mb-2">
+              Ready for Your Next Adventure?
+            </h3>
+            <p className="font-body text-sm text-primary-foreground/80 max-w-lg">
+              Book your ride now and experience premium travel at the best prices in Hyderabad
+            </p>
+          </div>
+          <div className="flex gap-3">
+            <a href="tel:+919949373579" className="bg-card text-foreground font-body font-semibold px-6 py-3 rounded-xl hover:shadow-lg transition-all flex items-center gap-2">
+              <Phone className="w-4 h-4" /> Call Now
+            </a>
+            <a href="https://wa.me/+919949375649" target="_blank" rel="noopener noreferrer" className="btn-outline-light !border-primary-foreground/30 flex items-center gap-2">
+              <MessageCircle className="w-4 h-4" /> WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
         {/* Brand */}
         <div>
-          <h3 className="font-heading text-2xl font-bold text-card mb-4">
-            Mallikarjuna <span className="text-primary">Travels</span>
-          </h3>
-          <p className="font-body text-sm leading-relaxed mb-4">
-            Best outstation cab service from Hyderabad with 24/7 availability, experienced drivers, and affordable prices.
-          </p>
-          <div className="space-y-2 text-sm">
-            <a href="tel:+919949373579" className="flex items-center gap-2 hover:text-primary transition-colors">
-              <Phone className="w-4 h-4" /> 99493 73579
-            </a>
-            <a href="https://wa.me/+919949375649" className="flex items-center gap-2 hover:text-primary transition-colors">
-              <MessageCircle className="w-4 h-4" /> 99493 75649
-            </a>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 shrink-0" /> Kukatpally, Hyderabad
+          <div className="flex items-center gap-2 mb-5">
+            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
+              <span className="font-heading text-lg text-primary-foreground">M</span>
             </div>
-            <a href="mailto:info@mallikarjunatravels.in" className="flex items-center gap-2 hover:text-primary transition-colors">
-              <Mail className="w-4 h-4" /> info@mallikarjunatravels.in
+            <div>
+              <span className="font-heading text-lg leading-tight block text-card">Mallikarjuna</span>
+              <span className="font-body text-[9px] font-bold uppercase tracking-[0.2em] text-primary">Travels</span>
+            </div>
+          </div>
+          <p className="font-body text-sm leading-relaxed mb-5">
+            Hyderabad's trusted outstation cab service with 24/7 availability, experienced drivers, and the most affordable prices.
+          </p>
+          <div className="space-y-2.5 text-sm">
+            <a href="tel:+919949373579" className="flex items-center gap-2.5 hover:text-primary transition-colors font-body">
+              <Phone className="w-4 h-4 text-primary" /> +91 99493 73579
+            </a>
+            <a href="https://wa.me/+919949375649" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 hover:text-primary transition-colors font-body">
+              <MessageCircle className="w-4 h-4 text-primary" /> +91 99493 75649
+            </a>
+            <div className="flex items-center gap-2.5 font-body">
+              <MapPin className="w-4 h-4 text-primary shrink-0" /> Kukatpally, Hyderabad
+            </div>
+            <a href="mailto:info@mallikarjunatravels.in" className="flex items-center gap-2.5 hover:text-primary transition-colors font-body">
+              <Mail className="w-4 h-4 text-primary" /> info@mallikarjunatravels.in
             </a>
           </div>
         </div>
 
         {/* Quick Links */}
         <div>
-          <h4 className="font-heading text-lg font-semibold text-card mb-4">Quick Links</h4>
-          <ul className="space-y-2">
+          <h4 className="font-heading text-lg text-card mb-5">Quick Links</h4>
+          <ul className="space-y-2.5">
             {quickLinks.map((link) => (
-              <li key={link}>
-                <a href="#contact" className="font-body text-sm hover:text-primary transition-colors">
-                  {link}
+              <li key={link.label}>
+                <a href={link.href} className="font-body text-sm hover:text-primary hover:pl-1 transition-all">
+                  {link.label}
                 </a>
               </li>
             ))}
@@ -61,11 +96,11 @@ const Footer = () => (
 
         {/* Routes Col1 */}
         <div>
-          <h4 className="font-heading text-lg font-semibold text-card mb-4">Popular Routes</h4>
-          <ul className="space-y-2">
+          <h4 className="font-heading text-lg text-card mb-5">Popular Routes</h4>
+          <ul className="space-y-2.5">
             {routesCol1.map((r) => (
               <li key={r}>
-                <a href="#contact" className="font-body text-sm hover:text-primary transition-colors">{r}</a>
+                <a href="#contact" className="font-body text-sm hover:text-primary hover:pl-1 transition-all">{r}</a>
               </li>
             ))}
           </ul>
@@ -73,24 +108,37 @@ const Footer = () => (
 
         {/* Routes Col2 */}
         <div>
-          <h4 className="font-heading text-lg font-semibold text-card mb-4">More Routes</h4>
-          <ul className="space-y-2">
+          <h4 className="font-heading text-lg text-card mb-5">More Routes</h4>
+          <ul className="space-y-2.5">
             {routesCol2.map((r) => (
               <li key={r}>
-                <a href="#contact" className="font-body text-sm hover:text-primary transition-colors">{r}</a>
+                <a href="#contact" className="font-body text-sm hover:text-primary hover:pl-1 transition-all">{r}</a>
               </li>
             ))}
           </ul>
         </div>
       </div>
 
-      <div className="border-t border-footer-foreground/20 pt-6 text-center">
-        <p className="font-body text-sm">© 2024 Mallikarjuna Travels. All rights reserved.</p>
+      <div className="border-t border-footer-foreground/15 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
+        <p className="font-body text-xs text-footer-foreground/60">
+          © 2024 Mallikarjuna Travels. All rights reserved.
+        </p>
+        <div className="flex gap-4">
+          <a href="#" className="font-body text-xs text-footer-foreground/60 hover:text-primary transition-colors">Privacy Policy</a>
+          <a href="#" className="font-body text-xs text-footer-foreground/60 hover:text-primary transition-colors">Terms of Service</a>
+        </div>
       </div>
     </div>
 
     {/* Floating action buttons */}
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+      <a
+        href="#home"
+        className="w-12 h-12 bg-card/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform border border-border"
+        aria-label="Scroll to top"
+      >
+        <ArrowUp className="w-5 h-5 text-foreground" />
+      </a>
       <a
         href="tel:+919949373579"
         className="w-14 h-14 bg-primary rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
@@ -100,10 +148,12 @@ const Footer = () => (
       </a>
       <a
         href="https://wa.me/+919949375649"
+        target="_blank"
+        rel="noopener noreferrer"
         className="w-14 h-14 bg-secondary rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
         aria-label="WhatsApp us"
       >
-        <MessageCircle className="w-6 h-6 text-primary-foreground" />
+        <MessageCircle className="w-6 h-6 text-secondary-foreground" />
       </a>
     </div>
   </footer>
