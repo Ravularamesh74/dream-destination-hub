@@ -1,8 +1,42 @@
-import { useState } from "react";
-import { Phone, MessageCircle } from "lucide-react";
+import { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Phone, MessageCircle, MapPin, Mail, Send, Clock } from "lucide-react";
+
+const contactInfo = [
+  {
+    icon: Phone,
+    label: "Call Us",
+    value: "+91 99493 73579",
+    href: "tel:+919949373579",
+    color: "bg-primary/10 text-primary",
+  },
+  {
+    icon: MessageCircle,
+    label: "WhatsApp",
+    value: "+91 99493 75649",
+    href: "https://wa.me/+919949375649",
+    color: "bg-secondary/10 text-secondary",
+  },
+  {
+    icon: Mail,
+    label: "Email Us",
+    value: "info@mallikarjunatravels.in",
+    href: "mailto:info@mallikarjunatravels.in",
+    color: "bg-accent/20 text-accent-foreground",
+  },
+  {
+    icon: MapPin,
+    label: "Visit Us",
+    value: "Kukatpally, Hyderabad",
+    href: "#",
+    color: "bg-emerald/10 text-emerald",
+  },
+];
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -15,88 +49,127 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-muted">
+    <section id="contact" className="section-padding bg-background" ref={ref}>
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="section-title">Get In Touch with Us Anytime!</h2>
-          <p className="section-subtitle">We're available 24/7 on phone and WhatsApp</p>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="font-body text-xs font-bold uppercase tracking-[0.2em] text-primary mb-3 block">
+            Get in Touch
+          </span>
+          <h2 className="section-title">Contact Us Anytime</h2>
+          <p className="section-subtitle">
+            We're available 24/7 on phone and WhatsApp. Reach out for bookings, queries, or custom packages.
+          </p>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact info */}
-          <div className="space-y-6">
-            <a
-              href="tel:+919949373579"
-              className="flex items-center gap-4 bg-card rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
-            >
-              <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
-                <Phone className="w-6 h-6 text-primary" />
+        <div className="grid lg:grid-cols-5 gap-8">
+          {/* Contact cards */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-2 space-y-4"
+          >
+            {contactInfo.map((c, i) => (
+              <motion.a
+                key={c.label}
+                href={c.href}
+                target={c.href.startsWith("http") ? "_blank" : undefined}
+                rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                initial={{ opacity: 0, x: -20 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
+                className="flex items-center gap-4 bg-card rounded-2xl p-5 border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 group"
+              >
+                <div className={`w-12 h-12 rounded-xl ${c.color} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform`}>
+                  <c.icon className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="font-body text-xs text-muted-foreground uppercase tracking-wider">{c.label}</p>
+                  <p className="font-body text-sm font-semibold text-foreground">{c.value}</p>
+                </div>
+              </motion.a>
+            ))}
+
+            {/* Hours card */}
+            <div className="bg-primary rounded-2xl p-5 text-primary-foreground">
+              <div className="flex items-center gap-3 mb-3">
+                <Clock className="w-5 h-5" />
+                <span className="font-body text-sm font-bold">Working Hours</span>
               </div>
-              <div>
-                <p className="font-body text-sm text-muted-foreground">Call Us</p>
-                <p className="font-heading text-xl font-semibold text-foreground">99493 73579</p>
-              </div>
-            </a>
-            <a
-              href="https://wa.me/+919949375649"
-              className="flex items-center gap-4 bg-card rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
-            >
-              <div className="w-14 h-14 bg-secondary/10 rounded-full flex items-center justify-center shrink-0">
-                <MessageCircle className="w-6 h-6 text-secondary" />
-              </div>
-              <div>
-                <p className="font-body text-sm text-muted-foreground">WhatsApp</p>
-                <p className="font-heading text-xl font-semibold text-foreground">99493 75649</p>
-              </div>
-            </a>
-            <div className="bg-card rounded-xl p-6 shadow-md">
-              <p className="font-body text-muted-foreground leading-relaxed">
-                For your travel needs, we are available 24 hours on phone and WhatsApp. We are best known for our service and quick response with over 4 years of experience in the industry.
+              <p className="font-body text-xs text-primary-foreground/80">
+                We operate 24 hours, 7 days a week. Book anytime, travel anytime!
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Contact form */}
-          <form onSubmit={handleSubmit} className="bg-card rounded-xl p-8 shadow-md space-y-4">
-            <input
-              name="name"
-              placeholder="Your Name"
-              value={form.name}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 rounded-lg border border-border bg-background font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
-            />
-            <input
-              name="email"
-              type="email"
-              placeholder="Email Address"
-              value={form.email}
-              onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg border border-border bg-background font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
-            />
-            <input
-              name="phone"
-              placeholder="Phone Number"
-              value={form.phone}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 rounded-lg border border-border bg-background font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
-            />
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              value={form.message}
-              onChange={handleChange}
-              rows={4}
-              className="w-full px-4 py-3 rounded-lg border border-border bg-background font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none"
-            />
-            <button
-              type="submit"
-              className="w-full bg-primary text-primary-foreground font-body font-semibold py-3 rounded-lg hover:opacity-90 transition-opacity"
-            >
-              Send via WhatsApp
+          <motion.form
+            onSubmit={handleSubmit}
+            initial={{ opacity: 0, x: 40 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="lg:col-span-3 bg-card rounded-3xl p-8 md:p-10 border border-border premium-shadow"
+          >
+            <h3 className="font-heading text-2xl text-foreground mb-2">Send Us a Message</h3>
+            <p className="font-body text-sm text-muted-foreground mb-8">
+              Fill the form below and we'll get back to you within minutes
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label className="font-body text-xs font-semibold text-foreground mb-1.5 block">Your Name *</label>
+                <input
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-muted/50 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+                  placeholder="John Doe"
+                />
+              </div>
+              <div>
+                <label className="font-body text-xs font-semibold text-foreground mb-1.5 block">Phone Number *</label>
+                <input
+                  name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-muted/50 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+                  placeholder="+91 98765 43210"
+                />
+              </div>
+            </div>
+            <div className="mb-4">
+              <label className="font-body text-xs font-semibold text-foreground mb-1.5 block">Email Address</label>
+              <input
+                name="email"
+                type="email"
+                value={form.email}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-xl border border-border bg-muted/50 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+                placeholder="you@example.com"
+              />
+            </div>
+            <div className="mb-6">
+              <label className="font-body text-xs font-semibold text-foreground mb-1.5 block">Your Message</label>
+              <textarea
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                rows={4}
+                className="w-full px-4 py-3 rounded-xl border border-border bg-muted/50 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all resize-none"
+                placeholder="Tell us about your travel plans..."
+              />
+            </div>
+            <button type="submit" className="btn-primary w-full flex items-center justify-center gap-2">
+              <Send className="w-4 h-4" /> Send via WhatsApp
             </button>
-          </form>
+          </motion.form>
         </div>
       </div>
     </section>

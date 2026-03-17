@@ -6,11 +6,12 @@ import TourPackages from "@/components/TourPackages";
 import AboutSection from "@/components/AboutSection";
 import FleetSection from "@/components/FleetSection";
 import StatsSection from "@/components/StatsSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => (
-  <div className="min-h-screen">
+  <div className="min-h-screen overflow-x-hidden">
     <TopBar />
     <Navbar />
     <HeroSection />
@@ -19,6 +20,7 @@ const Index = () => (
     <AboutSection />
     <FleetSection />
     <StatsSection />
+    <TestimonialsSection />
     <ContactSection />
     <Footer />
   </div>
