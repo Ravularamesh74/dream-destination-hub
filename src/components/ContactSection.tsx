@@ -6,28 +6,28 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Call Us",
-    value: "+91 99493 73579",
-    href: "tel:+919949373579",
+    value: "+91 7989345281",
+    href: "tel:+917989345281",
     color: "bg-primary/10 text-primary",
   },
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "+91 99493 75649",
-    href: "https://wa.me/+919949375649",
+    value: "+91 7989345281",
+    href: "https://wa.me/+917989345281",
     color: "bg-secondary/10 text-secondary",
   },
   {
     icon: Mail,
     label: "Email Us",
-    value: "info@mallikarjunatravels.in",
-    href: "mailto:info@mallikarjunatravels.in",
+    value: "info@mallikarjunatravels9771@gmail.com",
+    href: "mailto:info@mallikarjunatravels9771@gmail.com",
     color: "bg-accent/20 text-accent-foreground",
   },
   {
     icon: MapPin,
     label: "Visit Us",
-    value: "Kukatpally, Hyderabad",
+    value: "Skandagiri temple, Padmarao Nagar, Secunderabad, Hyderabad",
     href: "#",
     color: "bg-emerald/10 text-emerald",
   },
@@ -45,7 +45,7 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const text = `Name: ${form.name}%0AEmail: ${form.email}%0APhone: ${form.phone}%0AMessage: ${form.message}`;
-    window.open(`https://wa.me/+919949375649?text=${text}`, "_blank");
+    window.open(`https://wa.me/+917989345281?text=${text}`, "_blank");
   };
 
   return (

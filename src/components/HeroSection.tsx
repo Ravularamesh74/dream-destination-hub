@@ -53,7 +53,7 @@ const HeroSection = () => (
           <a href="#contact" className="btn-primary flex items-center gap-2">
             Book Your Ride <ArrowRight className="w-4 h-4" />
           </a>
-          <a href="https://wa.me/+919949375649" target="_blank" rel="noopener noreferrer" className="btn-outline-light">
+          <a href="https://wa.me/+917989345281" target="_blank" rel="noopener noreferrer" className="btn-outline-light">
             WhatsApp Us
           </a>
         </div>

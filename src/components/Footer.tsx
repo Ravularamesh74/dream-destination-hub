@@ -39,10 +39,10 @@ const Footer = () => (
             </p>
           </div>
           <div className="flex gap-3">
-            <a href="tel:+919949373579" className="bg-card text-foreground font-body font-semibold px-6 py-3 rounded-xl hover:shadow-lg transition-all flex items-center gap-2">
+            <a href="tel:+917989345281" className="bg-card text-foreground font-body font-semibold px-6 py-3 rounded-xl hover:shadow-lg transition-all flex items-center gap-2">
               <Phone className="w-4 h-4" /> Call Now
             </a>
-            <a href="https://wa.me/+919949375649" target="_blank" rel="noopener noreferrer" className="btn-outline-light !border-primary-foreground/30 flex items-center gap-2">
+            <a href="https://wa.me/+917989345281" target="_blank" rel="noopener noreferrer" className="btn-outline-light !border-primary-foreground/30 flex items-center gap-2">
               <MessageCircle className="w-4 h-4" /> WhatsApp
             </a>
           </div>
@@ -65,17 +65,17 @@ const Footer = () => (
             Hyderabad's trusted outstation cab service with 24/7 availability, experienced drivers, and the most affordable prices.
           </p>
           <div className="space-y-2.5 text-sm">
-            <a href="tel:+919949373579" className="flex items-center gap-2.5 hover:text-primary transition-colors font-body">
-              <Phone className="w-4 h-4 text-primary" /> +91 99493 73579
+            <a href="tel:+917989345281" className="flex items-center gap-2.5 hover:text-primary transition-colors font-body">
+              <Phone className="w-4 h-4 text-primary" /> +91 79893 45281
             </a>
-            <a href="https://wa.me/+919949375649" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 hover:text-primary transition-colors font-body">
-              <MessageCircle className="w-4 h-4 text-primary" /> +91 99493 75649
+            <a href="https://wa.me/+917989345281" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 hover:text-primary transition-colors font-body">
+              <MessageCircle className="w-4 h-4 text-primary" /> +91 79893 45281
             </a>
             <div className="flex items-center gap-2.5 font-body">
-              <MapPin className="w-4 h-4 text-primary shrink-0" /> Kukatpally, Hyderabad
+              <MapPin className="w-4 h-4 text-primary shrink-0" /> Skandagiri temple, Padmarao Nagar, Secunderabad, Hyderabad
             </div>
-            <a href="mailto:info@mallikarjunatravels.in" className="flex items-center gap-2.5 hover:text-primary transition-colors font-body">
-              <Mail className="w-4 h-4 text-primary" /> info@mallikarjunatravels.in
+            <a href="mailto:info@mallikarjunatravels9771@gmail.com.in" className="flex items-center gap-2.5 hover:text-primary transition-colors font-body">
+              <Mail className="w-4 h-4 text-primary" /> info@mallikarjunatravels9771@gmail.com.in
             </a>
           </div>
         </div>
@@ -140,14 +140,14 @@ const Footer = () => (
         <ArrowUp className="w-5 h-5 text-foreground" />
       </a>
       <a
-        href="tel:+919949373579"
+        href="tel:+917989345281"
         className="w-14 h-14 bg-primary rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
         aria-label="Call us"
       >
         <Phone className="w-6 h-6 text-primary-foreground" />
       </a>
       <a
-        href="https://wa.me/+919949375649"
+        href="https://wa.me/+917989345281"
         target="_blank"
         rel="noopener noreferrer"
         className="w-14 h-14 bg-secondary rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
