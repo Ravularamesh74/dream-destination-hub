@@ -41,8 +41,8 @@ const ContactSection = () => {
               href="https://wa.me/+919949375649"
               className="flex items-center gap-4 bg-card rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
             >
-              <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center shrink-0">
-                <MessageCircle className="w-6 h-6 text-green-600" />
+              <div className="w-14 h-14 bg-secondary/10 rounded-full flex items-center justify-center shrink-0">
+                <MessageCircle className="w-6 h-6 text-secondary" />
               </div>
               <div>
                 <p className="font-body text-sm text-muted-foreground">WhatsApp</p>

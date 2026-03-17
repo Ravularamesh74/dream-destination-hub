@@ -100,7 +100,7 @@ const Footer = () => (
       </a>
       <a
         href="https://wa.me/+919949375649"
-        className="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+        className="w-14 h-14 bg-secondary rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
         aria-label="WhatsApp us"
       >
         <MessageCircle className="w-6 h-6 text-primary-foreground" />
