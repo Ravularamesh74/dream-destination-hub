@@ -187,8 +187,8 @@ const ContactSection = () => {
                 placeholder="Tell us about your travel plans..."
               />
             </div>
-            <button type="submit" className="btn-primary w-full flex items-center justify-center gap-2">
-              <Send className="w-4 h-4" /> Send via WhatsApp
+            <button type="submit" disabled={loading} className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50">
+              <Send className="w-4 h-4" /> {loading ? "Sending..." : "Send via WhatsApp"}
             </button>
           </motion.form>
         </div>
