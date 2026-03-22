@@ -4,9 +4,9 @@ import { Car, Users, MapPin, CalendarDays } from "lucide-react";
 
 const stats = [
   { icon: Car, value: 21, suffix: "+", label: "Fleet of Cars" },
-  { icon: Users, value: 2000, suffix: "+", label: "Happy Customers" },
+  { icon: Users, value: 20000, suffix: "+", label: "Happy Customers" },
   { icon: MapPin, value: 42, suffix: "+", label: "Outstation Routes" },
-  { icon: CalendarDays, value: 4, suffix: "+", label: "Years in Business" },
+  { icon: CalendarDays, value: 16, suffix: "+", label: "Years in Business" },
 ];
 
 const Counter = ({ target, suffix }: { target: number; suffix: string }) => {

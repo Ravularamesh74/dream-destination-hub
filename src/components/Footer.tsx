@@ -1,4 +1,5 @@
 import { Phone, MessageCircle, MapPin, Mail, ArrowUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const quickLinks = [
   { label: "Airport Cabs", href: "#services" },
@@ -124,8 +125,8 @@ const Footer = () => (
           © 2024 Mallikarjuna Travels. All rights reserved.
         </p>
         <div className="flex gap-4">
-          <a href="#" className="font-body text-xs text-footer-foreground/60 hover:text-primary transition-colors">Privacy Policy</a>
-          <a href="#" className="font-body text-xs text-footer-foreground/60 hover:text-primary transition-colors">Terms of Service</a>
+          <Link to="/privacy-policy" className="font-body text-xs text-footer-foreground/60 hover:text-primary transition-colors">Privacy Policy</Link>
+          <Link to="/terms-of-service" className="font-body text-xs text-footer-foreground/60 hover:text-primary transition-colors">Terms of Service</Link>
         </div>
       </div>
     </div>

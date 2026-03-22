@@ -48,7 +48,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="tel:+919949373579"
+            href="tel:+917989345281"
             className="btn-primary flex items-center gap-2 text-sm !py-2.5 !px-5"
           >
             <Phone className="w-4 h-4" /> Book Now
@@ -79,7 +79,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="tel:+919949373579"
+            href="tel:+917989345281"
             className="btn-primary flex items-center justify-center gap-2 text-sm mt-4"
           >
             <Phone className="w-4 h-4" /> Book Now

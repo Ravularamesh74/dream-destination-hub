@@ -16,7 +16,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    name: "Mohammed Akhil",
+    name: "Akhil",
     location: "Kukatpally",
     text: "Very affordable and reliable. Used their airport transfer service multiple times. Always punctual and the vehicles are always in great condition.",
     rating: 5,

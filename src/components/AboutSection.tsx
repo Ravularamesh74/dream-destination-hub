@@ -9,7 +9,7 @@ const highlights = [
   "Experienced & trained professional drivers",
   "GPS-tracked, sanitized vehicles",
   "Transparent pricing — no hidden charges",
-  "Serving since 2006 with 2000+ happy clients",
+  "Serving since 2015 with 20000+ happy clients",
   "Economy to luxury cab options available",
 ];
 
@@ -46,7 +46,7 @@ const AboutSection = () => {
               </div>
               <div>
                 <p className="font-body text-sm font-bold text-foreground">Trusted</p>
-                <p className="font-body text-xs text-muted-foreground">Since 2006</p>
+                <p className="font-body text-xs text-muted-foreground">Since 2015</p>
               </div>
             </motion.div>
           </motion.div>

@@ -4,12 +4,12 @@ import luxuryFleet from "@/assets/luxury-fleet.jpg";
 import { Check } from "lucide-react";
 
 const fleet = [
-  { name: "Swift DZire", seats: "4+1", type: "Sedan", price: "₹11/km" },
-  { name: "Toyota Etios", seats: "4+1", type: "Sedan", price: "₹12/km" },
-  { name: "Maruti Ertiga", seats: "6+1", type: "MUV", price: "₹14/km" },
-  { name: "Toyota Innova", seats: "7+1", type: "MUV", price: "₹16/km" },
-  { name: "Innova Crysta", seats: "7+1", type: "Premium", price: "₹18/km" },
-  { name: "Tempo Traveller", seats: "12-28", type: "Mini Bus", price: "₹22/km" },
+  { name: "Swift DZire", seats: "4+1", type: "Sedan", price: "₹12/km" },
+  { name: "Toyota Etios", seats: "4+1", type: "Sedan", price: "₹13/km" },
+  { name: "Maruti Ertiga", seats: "6+1", type: "MUV", price: "₹15/km" },
+  { name: "Toyota Innova", seats: "7+1", type: "MUV", price: "₹18/km" },
+  { name: "Innova Crysta", seats: "7+1", type: "Premium", price: "₹20/km" },
+  { name: "Tempo Traveller", seats: "12-28", type: "Mini Bus", price: "₹26/km" },
 ];
 
 const features = [

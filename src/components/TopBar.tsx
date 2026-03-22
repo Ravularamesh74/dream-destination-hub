@@ -17,7 +17,7 @@ const TopBar = () => (
       </div>
       <div className="hidden md:flex items-center gap-5">
         <span className="flex items-center gap-1.5 font-body">
-          <MapPin className="w-3 h-3" /> Skandagiri temple, Padmarao Nagar, Secunderabad, Hyderabad
+          <MapPin className="w-3 h-3" /> Skandagiri Temple, Padmarao Nagar, Secunderabad, Hyderabad
         </span>
         <a href="mailto:info@mallikarjunatravels9771@gmail.com.in" className="flex items-center gap-1.5 hover:text-primary transition-colors font-body">
           <Mail className="w-3 h-3" /> info@mallikarjunatravels9771@gmail.com.in
