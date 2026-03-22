@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import CabServices from "@/components/CabServices";
 import TourPackages from "@/components/TourPackages";
+import BookingForm from "@/components/BookingForm";
 import AboutSection from "@/components/AboutSection";
 import FleetSection from "@/components/FleetSection";
 import StatsSection from "@/components/StatsSection";
@@ -17,6 +18,7 @@ const Index = () => (
     <HeroSection />
     <CabServices />
     <TourPackages />
+    <BookingForm />
     <AboutSection />
     <FleetSection />
     <StatsSection />
