@@ -14,7 +14,81 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contact_submissions: {
+        Row: {
+          created_at: string
+          email: string | null
+          id: string
+          message: string | null
+          name: string
+          phone: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          message?: string | null
+          name: string
+          phone: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          message?: string | null
+          name?: string
+          phone?: string
+        }
+        Relationships: []
+      }
+      tour_bookings: {
+        Row: {
+          created_at: string
+          customer_email: string | null
+          customer_name: string
+          customer_phone: string
+          destination: string
+          id: string
+          passengers: number | null
+          pickup_location: string | null
+          special_requests: string | null
+          status: string
+          travel_date: string | null
+          updated_at: string
+          vehicle_type: string | null
+        }
+        Insert: {
+          created_at?: string
+          customer_email?: string | null
+          customer_name: string
+          customer_phone: string
+          destination: string
+          id?: string
+          passengers?: number | null
+          pickup_location?: string | null
+          special_requests?: string | null
+          status?: string
+          travel_date?: string | null
+          updated_at?: string
+          vehicle_type?: string | null
+        }
+        Update: {
+          created_at?: string
+          customer_email?: string | null
+          customer_name?: string
+          customer_phone?: string
+          destination?: string
+          id?: string
+          passengers?: number | null
+          pickup_location?: string | null
+          special_requests?: string | null
+          status?: string
+          travel_date?: string | null
+          updated_at?: string
+          vehicle_type?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
