@@ -1,5 +1,7 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 import { Phone, MessageCircle, MapPin, Mail, Send, Clock } from "lucide-react";
 
 const contactInfo = [
