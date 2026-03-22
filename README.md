@@ -114,7 +114,8 @@ NEXT_PUBLIC_EMAIL=support@mallikarjunatravels.com
 *Add your project screenshots here*
 
 ```
-/public/preview.png
+/public/preview.png<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/48fa7e4f-6b8c-416c-809e-ba372869cac3" />
+
 ```
 
 ---
